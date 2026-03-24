@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const host = process.env.HOST || "127.0.0.1";
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 const web_server_url = process.env.PUBLIC_URL || `http://${host}:${port}`;
 
 export default async function proxyM3U8(url, headers, res) {
