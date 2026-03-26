@@ -5,26 +5,3 @@ name = "m3u8-proxy"
 main = "m3u8proxy(cf_worker).js"
 
 # Ensures your worker uses the latest stable engine features
-compatibility_date = "2026-03-26"
-
-# Performance & Reliability Settings
-[observability]
-enabled = true # Gives you a dashboard to see if streams are failing
-
-[vars]
-# You can change these without redeploying the code
-DEFAULT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-CORS_ORIGIN = "*"
-
-# Optional: Smart Routing 
-# This helps reduce latency for users by finding the fastest path to the video source
-[placement]
-mode = "smart"
-
-# Optional: Cache Rules (If you have a paid plan, otherwise ignore)
-# This helps store .ts segments on Cloudflare's edge to save your bandwidth
-[[rules]]
-type = "Data"
-globs = ["**/*.ts"]
-handler = "network-only"
-
