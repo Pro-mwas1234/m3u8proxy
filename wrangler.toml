@@ -2,7 +2,7 @@
 name = "m3u8-proxy"
 
 # Points Cloudflare to your specific 'cf' logic file
-main = ""
+main = "m3u8proxy(cf_worker).js"
 
 # Ensures your worker uses the latest stable engine features
 compatibility_date = "2026-03-26"
