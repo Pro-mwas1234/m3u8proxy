@@ -1,18 +1,28 @@
 {
   "version": 2,
-  "builds": [
-      {
-          "src": "/src/index.js",
-          "use": "@vercel/node"
-      }
-  ],
+  "functions": {
+    "src/index.js": {
+      "maxDuration": 60
+    }
+  },
   "routes": [
-      {
-      "src": "/(.*)",
+    {
+      "src": "/m3u8-proxy",
       "dest": "/src/index.js",
       "headers": {
-                "Access-Control-Allow-Origin": "*"
-            }
+        "Access-Control-Allow-Origin": "*"
       }
+    },
+    {
+      "src": "/ts-proxy",
+      "dest": "/src/index.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/index.html"
+    }
   ]
 }
