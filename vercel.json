@@ -1,20 +1,13 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.js": {
-      "maxDuration": 60
-    }
-  },
   "routes": [
     {
       "src": "/m3u8-proxy",
-      "dest": "/api/index.js",
-      "headers": { "Access-Control-Allow-Origin": "*" }
+      "dest": "/api/index.js"
     },
     {
       "src": "/ts-proxy",
-      "dest": "/api/index.js",
-      "headers": { "Access-Control-Allow-Origin": "*" }
+      "dest": "/api/index.js"
     },
     {
       "src": "/",
